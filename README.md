@@ -127,20 +127,52 @@ git push origin master
 Sjekk GitHub-repoet ditt, har commitene dine dukket opp?
 
 ### Oppgave 8: Lage en ny branch
-La oss si at du vil lage en README-fil, men ikke er sikker på om du vil ha den inn i `master` med en gang. Lag en ny branch ut fra master, som du kaller `readme-fil`:
+La oss si at du vil gjøre noen endringer, men ikke er sikker på om du vil ha dem inn i `master` med en gang. Lag en ny branch ut fra master, som du kaller `min-branch`:
 
 ```
-git branch readme-fil
+git branch min-branch
 ```
-Dersom du bare skriver `git branch` nå, bør det komme opp to brancher, `master` og `readme-fil`. Bytt til den nye branchen din:
+Dersom du bare skriver `git branch` nå, bør det komme opp to brancher, `master` og `min-branch`. Bytt til den nye branchen din:
 
 ```
-git checkout readme-fil
+git checkout min-branch
 ```
 
 > **Tips!**
 Dersom du vil gjøre dette i én kommando, kan du kjøre:
 `
-git checkout -b readme-fil
+git checkout -b min-branch
 `
 Dette vil både lage og bytte til den nye branchen.
+
+Dersom du sjekker loggen din med `git log`, vil denne vere helt lik den i master, det er fordi du nettopp *har laget en ny branch med utgangspunkt i master*.
+
+### Oppgave 9: Løse en merge conflict
+Vi skal nå gjøre en endring på `min-branch`, for så å gjøre en endring på samme sted på `master`. Så skal vi prøve å merge de to branchene, og løse en merge conflict.
+
+Begynn med å endre noe i filen din på `min-branch`. Gjerne på den første linjen. `git add` og `git commit` dette.
+
+Bytt så over til `master` ved å kjøre `git checkout master`.
+
+Hvis du kjører `git log` nå, vil committen du nettopp lagde på `min-branch` ikke ligge der, det er fordi denne naturligvis ligger på `min-branch`.
+
+Gjør en endring øverst i filen din på master også. `git add` og `git commit` dette.
+
+Nå kan du prøve å kjøre
+```
+git merge min-branch
+```
+Da vil git prøve å flette endringene i `min branch` inn i master.
+Ettersom endringene dine skjedde på samme sted i filen i de to branchene, vil ikke git forstå hva som skal gjøres. Du vil få opp en melding om at du har en merge conflict.
+
+Åpne filen din, den vil da se cirka sånn ut øverst:
+```
+<<<<<<< HEAD
+Endring i master
+=======
+Endring på min-branch
+>>>>>>> min-branch
+
+...
+```
+Nå må du selv få filen til å se ut slik du vil at den skal være etter mergen. Fjern linjene som starter med `<<<`, `>>>` og `==`.
