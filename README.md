@@ -107,6 +107,9 @@ Filen din burde nå ligge under "Modified".
 
 `git add` og `git commit` filen slik som i Oppgave 3.
 
+> **Tips!**
+Du trenger ikke å legge til en hel fil i Staged, med kommandoen `git add -p .` vil du kunne velge ut hver enkelt linje du har forandret. Skriv inn `h`for å få en beskrivelse av funksjonene i git add -p
+
 ## Oppgaver - Del 2
 ### Oppgave 6: Lag et repository på GitHub
 Når du er logget inn på GitHub.com, gå til hovedsiden og trykk på "New" på høyre side. Du kan også gå til profilen din > Repositories > New Repository.
