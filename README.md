@@ -16,7 +16,7 @@ git config --global user.name "John Doe"
 git config --global user.email johndoe@example.com
 ```
 
-## Oppgaver
+## Oppgaver - Del 1
 ### Oppgave 1: Terminal 101
 Åpne terminalen eller *git bash*. Gå til mappen du ønsker å ha prosjektet ditt i ved å bruke:
 
@@ -107,6 +107,7 @@ Filen din burde nå ligge under "Modified".
 
 `git add` og `git commit` filen slik som i Oppgave 3.
 
+## Oppgaver - Del 2
 ### Oppgave 6: Lag et repository på GitHub
 Når du er logget inn på GitHub.com, gå til hovedsiden og trykk på "New" på høyre side. Du kan også gå til profilen din > Repositories > New Repository.
 
