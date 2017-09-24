@@ -7,6 +7,14 @@ Nedlastningsfiler og instruksjoner for forskjellige OS finner du her:  https://g
 Følg stegene her dersom du ikke allerede har gjort det før kurset:
 https://help.github.com/articles/checking-for-existing-ssh-keys/
 
+Hvis ikke du gjør dette, vil du måtte skrive inn passordet ditt hver gang du gjør noe mot GitHub.
+
+## Sette navn og e-post
+Kjør de to kommandoene under, med ditt navn og e-post:
+```
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
+```
 
 ## Oppgaver
 ### Oppgave 1: Terminal 101
